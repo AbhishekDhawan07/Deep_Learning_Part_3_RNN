@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🔁 Deep Learning — Part 3: Recurrent Neural Networks (RNN)
+# 🔁 Deep Learning - Part 3: Recurrent Neural Networks (RNN)
 
-### Basics of RNN Implementation — Sentiment Classification & Hidden State Visualization
+### Basics of RNN Implementation - Sentiment Classification & Hidden State Visualization
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
@@ -34,7 +34,7 @@
 
 ## 📌 About the Project
 
-**Deep Learning — Part 3** introduces **Recurrent Neural Networks (RNN)** — the architecture designed for sequential data like text, time series, and speech.
+**Deep Learning — Part 3** introduces **Recurrent Neural Networks (RNN)** - the architecture designed for sequential data like text, time series, and speech.
 
 This notebook builds a complete **binary sentiment classifier** on a custom 30-sentence dataset (positive vs. negative), covering every step from raw text to trained model — and then goes further by building an **intermediate inspection model** to visualize how the RNN's hidden state evolves at each token timestep.
 
@@ -47,7 +47,7 @@ This notebook builds a complete **binary sentiment classifier** on a custom 30-s
 | 🔬 **Intermediate Model** | Extract & inspect embedding outputs + per-timestep hidden states |
 | 📊 **Hidden State Visualization** | Print hidden state matrix `(timesteps × units)` for any sentence |
 
-> 💡 The intermediate inspection model reuses the trained weights from the main model and reconstructs the RNN with `return_sequences=True` — allowing you to see exactly what the RNN "remembers" at each word in a sentence.
+> 💡 The intermediate inspection model reuses the trained weights from the main model and reconstructs the RNN with `return_sequences=True` - allowing you to see exactly what the RNN "remembers" at each word in a sentence.
 
 ---
 
@@ -122,10 +122,10 @@ Hidden states (timesteps × units):
 <summary><b>📝 Text Preprocessing Pipeline</b></summary>
 <br/>
 
-- **Custom 30-sentence dataset** — 15 positive + 15 negative sentiment sentences
-- `Tokenizer(num_words=2000, oov_token="<OOV>")` — handles out-of-vocabulary words
-- `texts_to_sequences()` — converts sentences to integer token ID sequences
-- `pad_sequences(padding='post')` — pads all sequences to uniform `maxlen`
+- **Custom 30-sentence dataset** - 15 positive + 15 negative sentiment sentences
+- `Tokenizer(num_words=2000, oov_token="<OOV>")` - handles out-of-vocabulary words
+- `texts_to_sequences()` - converts sentences to integer token ID sequences
+- `pad_sequences(padding='post')` - pads all sequences to uniform `maxlen`
 - Labels defined as `[1]*15 + [0]*15` → converted to NumPy array
 
 </details>
@@ -135,9 +135,9 @@ Hidden states (timesteps × units):
 <br/>
 
 - Built using **Keras Functional API** (`Input → Embedding → SimpleRNN → Dense`)
-- `Embedding(input_dim=2000, output_dim=16, mask_zero=True)` — masks padding tokens
-- `SimpleRNN(units=8, return_sequences=False, return_state=False)` — returns final hidden state only
-- `Dense(1, activation='sigmoid')` — binary output
+- `Embedding(input_dim=2000, output_dim=16, mask_zero=True)` - masks padding tokens
+- `SimpleRNN(units=8, return_sequences=False, return_state=False)` - returns final hidden state only
+- `Dense(1, activation='sigmoid')` - binary output
 - `model.summary()` printed for architecture inspection
 
 </details>
@@ -154,7 +154,7 @@ Hidden states (timesteps × units):
 </details>
 
 <details open>
-<summary><b>🔬 Intermediate Model — Embedding & Hidden State Inspection</b></summary>
+<summary><b>🔬 Intermediate Model - Embedding & Hidden State Inspection</b></summary>
 <br/>
 
 - **Intermediate model 1** — outputs both `embed` layer and `simple_rnn` layer activations using `model.get_layer()`
@@ -293,7 +293,7 @@ Hidden states (timesteps × units):
 ```
 Deep_Learning_Part_3/
 │
-├── 📓 Basics_of_RNN_Implenemtation.ipynb    # Main notebook — full RNN pipeline + inspection model
+├── 📓 Basics_of_RNN_Implenemtation.ipynb    # Main notebook - full RNN pipeline + inspection model
 │
 └── 📖 README.md                             # This file
 ```
@@ -302,7 +302,7 @@ Deep_Learning_Part_3/
 
 | File | Purpose |
 |------|---------|
-| `Basics_of_RNN_Implenemtation.ipynb` | Complete RNN notebook — text preprocessing, Embedding + SimpleRNN model, binary sentiment classification, intermediate model for hidden state visualization |
+| `Basics_of_RNN_Implenemtation.ipynb` | Complete RNN notebook - text preprocessing, Embedding + SimpleRNN model, binary sentiment classification, intermediate model for hidden state visualization |
 
 ---
 
